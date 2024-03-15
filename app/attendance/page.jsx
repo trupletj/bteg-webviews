@@ -86,29 +86,28 @@ function Attendance() {
       <h1>userId : {userId}</h1> */}
 
       {isLoading && (
-        <div className="flex flex-col space-y-3">
-          <Skeleton className="h-[125px] w-[250px] rounded-xl" />
-          <div className="space-y-2">
-            <Skeleton className="h-4 w-[250px]" />
-            <Skeleton className="h-4 w-[200px]" />
-          </div>
+        <div className="mx-auto">
+          <div className="lds-hourglass"></div>
         </div>
       )}
       {errorMessage && <p className="error-message">MSG : {errorMessage}</p>}
-      <Card>
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
+
       {data && (
         <pre>
+          <Card className="max-w-[200px]">
+            <CardHeader>
+              <CardTitle>НИЙТ</CardTitle>
+              {/* <CardDescription></CardDescription> */}
+            </CardHeader>
+            <CardContent>
+              <p className="text-red-500 font-bold text-xl">
+                {data.tsalinReports[0].sum}
+              </p>
+            </CardContent>
+            {/* <CardFooter>
+              <p>Card Footer</p>
+            </CardFooter> */}
+          </Card>
           {/* Display your fetched data here */}
           {JSON.stringify(data, null, 2)}
         </pre>
