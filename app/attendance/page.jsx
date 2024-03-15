@@ -2,6 +2,14 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 // import {
 //   Table,
 //   TableBody,
@@ -87,6 +95,18 @@ function Attendance() {
         </div>
       )}
       {errorMessage && <p className="error-message">MSG : {errorMessage}</p>}
+      <Card>
+        <CardHeader>
+          <CardTitle>Card Title</CardTitle>
+          <CardDescription>Card Description</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>Card Content</p>
+        </CardContent>
+        <CardFooter>
+          <p>Card Footer</p>
+        </CardFooter>
+      </Card>
       {data && (
         <pre>
           {/* Display your fetched data here */}
